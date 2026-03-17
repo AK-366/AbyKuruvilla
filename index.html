@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aby Kuruvilla — Product/UI/UX Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="mediaqueries.css"/>
+
+
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- INTRO OVERLAY -->
+  <div id="intro-overlay">
+    <div class="intro-tagline">Welcome To My Portfolio</div>
+    <div id="intro-logo-host" style="margin:0 0 12px;position:relative"></div>
+    <div class="intro-text" id="intro-text"></div>
+    <div class="intro-line"></div>
+  </div>
+
+  <!-- ═══ NAV ═══ -->
+  <nav id="main-nav">
+    <div class="logo">
+      <a href="#" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+
+        <!-- AK Circle Monogram — fully animated -->
+        <svg id="nav-logo-svg" width="36" height="36" viewBox="0 0 72 72"
+             xmlns="http://www.w3.org/2000/svg" style="overflow:visible;display:block;">
+          <defs>
+            <linearGradient id="gNav" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"   stop-color="#7a5c18"/>
+              <stop offset="28%"  stop-color="#d4af37"/>
+              <stop offset="52%"  stop-color="#f5e07a"/>
+              <stop offset="76%"  stop-color="#d4af37"/>
+              <stop offset="100%" stop-color="#8a6820"/>
+            </linearGradient>
+            <linearGradient id="gNavDash" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%"   stop-color="#5a4010" stop-opacity="0.25"/>
+              <stop offset="50%"  stop-color="#d4af37" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#5a4010" stop-opacity="0.25"/>
+            </linearGradient>
+            <linearGradient id="gNavSweep" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="white" stop-opacity="0"/>
+              <stop offset="38%"  stop-color="white" stop-opacity="0.22"/>
+              <stop offset="58%"  stop-color="white" stop-opacity="0.48"/>
+              <stop offset="100%" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+            <clipPath id="navCircClip">
+              <circle cx="36" cy="36" r="25"/>
+            </clipPath>
+          </defs>
+
+          <!-- Outer rotating gold ring -->
+          <g id="nav-ring-outer">
+            <circle id="nav-ring-glow" cx="36" cy="36" r="34"
+              fill="none" stroke="url(#gNav)" stroke-width="1.3"/>
+          </g>
+
+          <!-- Inner dashed ring — counter-rotates -->
+          <g id="nav-ring-dash">
+            <circle cx="36" cy="36" r="29"
+              fill="none" stroke="url(#gNavDash)"
+              stroke-width="0.5" stroke-dasharray="3 6"/>
+          </g>
+
+          <!-- Dark inner fill -->
+          <circle cx="36" cy="36" r="25" fill="#0d0d0d"/>
+          <!-- Subtle inner border -->
+          <circle cx="36" cy="36" r="25" fill="none"
+            stroke="rgba(212,175,55,0.1)" stroke-width="0.5"/>
+
+          <!-- Cardinal tick marks -->
+          <line x1="36" y1="2"  x2="36" y2="7"  stroke="#d4af37" stroke-width="0.8" opacity="0.45"/>
+          <line x1="36" y1="65" x2="36" y2="70" stroke="#d4af37" stroke-width="0.8" opacity="0.45"/>
+          <line x1="2"  y1="36" x2="7"  y2="36" stroke="#d4af37" stroke-width="0.8" opacity="0.45"/>
+          <line x1="65" y1="36" x2="70" y2="36" stroke="#d4af37" stroke-width="0.8" opacity="0.45"/>
+
+          <!-- A — left leg -->
+          <line id="nav-aL" class="nav-stroke"
+            x1="16" y1="52" x2="27.5" y2="21"
+            stroke="url(#gNav)" stroke-width="2.8" stroke-linecap="round"/>
+          <!-- A — right leg -->
+          <line id="nav-aR" class="nav-stroke"
+            x1="27.5" y1="21" x2="39" y2="52"
+            stroke="url(#gNav)" stroke-width="2.8" stroke-linecap="round"/>
+          <!-- A — crossbar -->
+          <line id="nav-aCB" class="nav-stroke"
+            x1="21" y1="40" x2="34" y2="40"
+            stroke="url(#gNav)" stroke-width="2" stroke-linecap="round"/>
+
+          <!-- K — vertical spine -->
+          <line id="nav-kV" class="nav-stroke"
+            x1="42" y1="21" x2="42" y2="52"
+            stroke="url(#gNav)" stroke-width="2.8" stroke-linecap="round"/>
+          <!-- K — upper arm -->
+          <line id="nav-kU" class="nav-stroke"
+            x1="42" y1="36" x2="55" y2="21"
+            stroke="url(#gNav)" stroke-width="2.4" stroke-linecap="round"/>
+          <!-- K — lower arm -->
+          <line id="nav-kD" class="nav-stroke"
+            x1="42" y1="36" x2="55" y2="52"
+            stroke="url(#gNav)" stroke-width="2.4" stroke-linecap="round"/>
+
+          <!-- Crown dots — spring pop in last -->
+          <circle id="nav-dA" class="nav-dot" cx="27.5" cy="21" r="2" fill="#f5e07a"/>
+          <circle id="nav-dK" class="nav-dot" cx="42"   cy="21" r="2" fill="#f5e07a"/>
+
+          <!-- Continuous light sweep across monogram -->
+          <rect id="nav-sweep" x="-36" y="10" width="36" height="52" rx="3"
+            fill="url(#gNavSweep)" opacity="0.55"
+            clip-path="url(#navCircClip)"/>
+        </svg>
+
+        <!-- Name: fade-in + continuous shimmer -->
+        <div id="nav-name-wrap">
+          <span id="nav-name-text"
+            style="font-family:'Cormorant Garamond',serif;
+                   font-size:16px;font-weight:300;
+                   letter-spacing:.28em;text-transform:uppercase;">
+            Aby Kuruvilla
+          </span>
+        </div>
+
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about"      onclick="toggleMobileMenu()">About</a>
+    <a href="#experience" onclick="toggleMobileMenu()">Experience</a>
+    <a href="#projects"   onclick="toggleMobileMenu()">Projects</a>
+    <a href="#contact"    onclick="toggleMobileMenu()">Contact</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-particles" id="hero-particles"></div>
+    <div class="hero-lines">
+      <svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">
+        <line x1="0"   y1="200" x2="1400" y2="600" stroke="rgba(212,168,75,0.06)" stroke-width="1"/>
+        <line x1="0"   y1="400" x2="1400" y2="200" stroke="rgba(123,110,232,0.04)" stroke-width="1"/>
+        <line x1="200" y1="0"   x2="600"  y2="800" stroke="rgba(200,169,110,0.03)" stroke-width="1"/>
+      </svg>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag">✦ &nbsp;Product/UI/UX Designer &amp; Frontend Developer &nbsp;✦</p>
+      <h1 class="hero-name">
+        Aby<br>
+        <em>Kuruvilla</em>
+      </h1>
+      <p class="hero-role">Designing with Clarity · Building with Purpose</p>
+      <p class="hero-bio">Product-focused designer who works end-to-end — from research and wireframes to high-fidelity, developer-ready designs. I bridge the gap between design and development.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="window.open('./Assets/AbyKuruvilla_UIUXDesigner_2026.pdf')">Download CV</button>
+        <button class="btn-outline"  onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get In Touch</button>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/abykuruvilla366/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/AK-366/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+          GitHub
+        </a>
+        <a href="https://www.behance.net/abykuruvilla/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="9" height="10" rx="1.5"/><path d="M2 12h9"/><path d="M13 8h6M13 12h7a3 3 0 010 5h-7V7a3.5 3.5 0 017 0"/></svg>
+          Behance
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-shape">
+        <div class="shape-ring"></div>
+        <div class="shape-ring shape-ring-2"></div>
+        <div class="shape-ring shape-ring-3"></div>
+        <div class="hero-photo-wrap">
+          <img src="./Assets/Profile-pic.png" alt="Aby Kuruvilla" class="hero-photo"/>
+          <div class="hero-photo-overlay"></div>
+        </div>
+        <div class="floating-tag">Figma · Advanced</div>
+        <div class="floating-tag">UX Research</div>
+        <div class="floating-tag">HTML · CSS · JS</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <div class="about-portrait">
+          <div class="about-portrait-inner">
+            <img src="./Assets/about-pic.png" alt="Aby Kuruvilla" class="about-photo"/>
+            <div class="about-photo-overlay"></div>
+          </div>
+          <div class="about-portrait-label">UI/UX Designer</div>
+          <div class="about-portrait-badge">✦ Available for hire</div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-box">
+            <div class="stat-num count-up" data-target="1">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num count-up" data-target="3">0</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num count-up" data-target="10">0</div>
+            <div class="stat-label">Skills Mastered</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num count-up" data-target="100">0</div>
+            <div class="stat-label">% Dev-Ready Designs</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="section-label reveal">About Me</div>
+        <h2 class="section-title reveal reveal-delay-1">
+          Designing with<br><em>intention.</em>
+        </h2>
+        <p class="about-bio reveal reveal-delay-2">
+          Hello, I’m Aby Kuruvilla — a UI designer and front-end developer focused on creating intuitive and visually refined digital products.
+           I design and build modern web and mobile interfaces that balance usability, performance, and aesthetics.
+           My process covers the full product journey: research, wireframing, UI design, prototyping, and responsive front-end development. 
+           With experience in HTML, CSS, and JavaScript, I bridge the gap between design and development to ensure ideas translate into polished, functional interfaces.
+        </p>
+        <p class="about-bio reveal reveal-delay-2" style="margin-top:-1rem">
+          Beyond design,My approach focuses on clarity, usability, and detail,
+           ensuring that every project not only looks great but also works seamlessly for users. 
+           I enjoy collaborating with clients to create digital products that are both visually engaging and practical.
+        </p>
+        <div class="about-cards">
+          <div class="about-card reveal reveal-delay-3">
+            <h4>Experience</h4>
+            <p>1+ year in UI/UX Design &amp; Frontend Development</p>
+          </div>
+          <div class="about-card reveal reveal-delay-4">
+            <h4>Education</h4>
+            <p>Bachelor's in Economics · Diploma in UI/UX &amp; Frontend Development</p>
+          </div>
+          <div class="about-card reveal reveal-delay-3">
+            <h4>Design Philosophy</h4>
+            <p>Clarity, hierarchy &amp; usability over decorative aesthetics</p>
+          </div>
+          <div class="about-card reveal reveal-delay-4">
+            <h4>Collaboration</h4>
+            <p>Working closely with developers, product owners &amp; stakeholders</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="section-label reveal">My Toolkit</div>
+    <h2 class="section-title reveal reveal-delay-1">Skills &amp;<br><em>Experience</em></h2>
+    <div class="skills-grid">
+      <div class="skills-col reveal reveal-delay-2">
+        <h3>Frontend Development</h3>
+        <div class="skill-item">
+          <span class="skill-name">HTML</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.92"></div></div>
+          <span class="skill-level">Experienced</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">CSS</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.90"></div></div>
+          <span class="skill-level">Experienced</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">SASS</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.70"></div></div>
+          <span class="skill-level">Intermediate</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">JavaScript</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.50"></div></div>
+          <span class="skill-level">Basic</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">TypeScript</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.45"></div></div>
+          <span class="skill-level">Basic</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Material UI</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.82"></div></div>
+          <span class="skill-level">Experienced</span>
+        </div>
+      </div>
+      <div class="skills-col reveal reveal-delay-3">
+        <h3>UI/UX Design</h3>
+        <div class="skill-item">
+          <span class="skill-name">Figma</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.95"></div></div>
+          <span class="skill-level">Advanced</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">UX Research</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.88"></div></div>
+          <span class="skill-level">Experienced</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Usability Testing</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.85"></div></div>
+          <span class="skill-level">Experienced</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Accessibility (WCAG)</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.68"></div></div>
+          <span class="skill-level">Intermediate</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Design Systems</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.80"></div></div>
+          <span class="skill-level">Experienced</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-name">Wireframing</span>
+          <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.90"></div></div>
+          <span class="skill-level">Advanced</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="section-label reveal">Work</div>
+    <h2 class="section-title reveal reveal-delay-1">Recent<br><em>Projects</em></h2>
+    <div class="projects-grid">
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-visual project-visual-1">
+          <img src="./Assets/project-tasty.png" alt="Tasty Menu UI" class="project-img"/>
+          <div class="pv-shape"></div>
+        </div>
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <div class="project-tag">UI/UX · Web</div>
+          <h3 class="project-title">Tasty Menu UI</h3>
+          <p class="project-desc">A web interface designed with clarity and usability at its core — from research through to developer handoff.</p>
+          <div class="project-links">
+            <a href="https://ak-366.github.io/tasty-menu-ui/" target="_blank" class="filled">Live Demo</a>
+            <a href="https://ak-366.github.io/tasty-menu-ui/" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-visual project-visual-2">
+          <img src="./Assets/project-vayo.png" alt="Vayo" class="project-img"/>
+          <div class="pv-shape"></div>
+          <div class="pv-shape-2"></div>
+        </div>
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <div class="project-tag">UI/UX · Mobile</div>
+          <h3 class="project-title">Vayo</h3>
+          <p class="project-desc">A mobile-first experience designed around real user needs, tested and iterated for maximum usability.</p>
+          <div class="project-links">
+            <a href="https://ak-366.github.io/Vayo/" target="_blank" class="filled">Live Demo</a>
+            <a href="https://github.com/AK-366/Vayo/" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-4">
+        <div class="project-visual project-visual-3">
+          <img src="./Assets/project-helpveno.png" alt="Help Veno" class="project-img"/>
+          <div class="pv-shape"></div>
+        </div>
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <div class="project-tag">Frontend · Dashboard</div>
+          <h3 class="project-title">Help Veno</h3>
+          <p class="project-desc">A data-rich dashboard built in HTML/CSS/JS, bridging the gap between design vision and front-end reality.</p>
+          <div class="project-links">
+            <a href="https://ak-366.github.io/Help-Veno/" target="_blank" class="filled">Live Demo</a>
+            <a href="https://ak-366.github.io/Help-Veno/" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal reveal-delay-5">
+  <div class="project-visual project-visual-4">
+    <img src="./Assets/project-crypto.png" alt="Crypro Crypto App" class="project-img"/>
+    <div class="pv-shape"></div>
+  </div>
+  <div class="project-overlay"></div>
+  <div class="project-content">
+    <div class="project-tag">Frontend · Crypto</div>
+    <h3 class="project-title">Crypro</h3>
+    <p class="project-desc">A sleek crypto tracking app built with HTML/CSS/JS, delivering real-time coin data and a clean, intuitive interface.</p>
+    <div class="project-links">
+      <a href="https://ak-366.github.io/Crypro--crypto-app/" target="_blank" class="filled">Live Demo</a>
+      <a href="https://github.com/AK-366/Crypro--crypto-app" target="_blank">GitHub</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section id="process">
+    <div class="section-label reveal">How I Work</div>
+    <h2 class="section-title reveal reveal-delay-1">Design<br><em>Process</em></h2>
+    <div class="process-scroll-wrap reveal reveal-delay-2">
+      <div class="process-track">
+        <div class="process-step">
+          <div class="step-dot"></div>
+          <div class="step-num">01</div>
+          <div class="step-name">Discover</div>
+          <div class="step-desc">User research, stakeholder interviews, competitor analysis</div>
+        </div>
+        <div class="process-step">
+          <div class="step-dot"></div>
+          <div class="step-num">02</div>
+          <div class="step-name">Define</div>
+          <div class="step-desc">Personas, user journeys, problem framing</div>
+        </div>
+        <div class="process-step">
+          <div class="step-dot"></div>
+          <div class="step-num">03</div>
+          <div class="step-name">Ideate</div>
+          <div class="step-desc">Sketches, concepts, information architecture</div>
+        </div>
+        <div class="process-step">
+          <div class="step-dot"></div>
+          <div class="step-num">04</div>
+          <div class="step-name">Prototype</div>
+          <div class="step-desc">Wireframes, high-fidelity designs in Figma</div>
+        </div>
+        <div class="process-step">
+          <div class="step-dot"></div>
+          <div class="step-num">05</div>
+          <div class="step-name">Test</div>
+          <div class="step-desc">Usability testing, WCAG accessibility audit</div>
+        </div>
+        <div class="process-step">
+          <div class="step-dot"></div>
+          <div class="step-num">06</div>
+          <div class="step-name">Launch</div>
+          <div class="step-desc">Developer handoff, HTML/CSS implementation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- ===== ABOUT IMAGE BANNER (before testimonials) ===== -->
+<section id="about-banner">
+  <div class="about-banner-inner">
+    <img src="./Assets/Gemini_Generated_Image_5exg2m5exg2m5exg.png" alt="Aby Kuruvilla" class="about-banner-img"/>
+    <div class="about-banner-overlay"></div>
+    <div class="about-banner-content reveal">
+      <p class="about-banner-label">Available for hire · 2026</p>
+      <h2 class="about-banner-heading">Turning ideas into <em>experiences.</em></h2>
+      <p class="about-banner-sub">UI/UX Designer · Product Designer · Frontend Developer</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" style="position:relative;">
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" style="position:relative;">
+    <div class="testimonials-bg-img" style="position:absolute;inset:0;z-index:0;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,5,10,0.92) 0%,rgba(7,7,7,0.92) 100%);"></div>
+    </div>
+    <div style="position:relative;z-index:1;">
+      <div class="section-label reveal">Kind Words</div>
+      <h2 class="section-title reveal reveal-delay-1">What People<br><em>Say</em></h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="quote-mark">"</div>
+          <p class="testimonial-text">Aby has a rare ability to think like both a designer and a developer. The designs are always clean, practical, and built with delivery in mind — not just aesthetics.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <div class="author-name">Sarah M.</div>
+              <div class="author-co">Product Manager · Tech Startup</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="quote-mark">"</div>
+          <p class="testimonial-text">Working with Aby was seamless. He understood our users, iterated quickly, and delivered designs that our dev team could actually implement without friction.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">R</div>
+            <div>
+              <div class="author-name">Rahul K.</div>
+              <div class="author-co">Lead Developer · SaaS Platform</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <div class="section-label reveal">Let's Talk</div>
+        <h2 class="contact-cta reveal reveal-delay-1">
+          Ready to create something <em>extraordinary?</em>
+        </h2>
+        <p class="reveal reveal-delay-2" style="color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;line-height:1.8;">
+          I'm available for freelance projects, full-time roles, and collaborations. Let's build something that makes people's lives easier.
+        </p>
+        <div class="contact-info reveal reveal-delay-3">
+          <a href="/cdn-cgi/l/email-protection#9dfcffe4f6e8efe8ebf4f1f1fcddf8f0fcf4f1b3fef2f0" class="contact-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            <span class="__cf_email__" data-cfemail="7b1a1902100e090e0d1217171a3b1e161a121755181416">abykuruvilla56923@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/abykuruvilla366/" target="_blank" class="contact-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4"/></svg>
+            linkedin.com/in/abykuruvilla366
+          </a>
+          <a href="https://github.com/AK-366/" target="_blank" class="contact-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            github.com/AK-366
+          </a>
+          <a href="https://www.behance.net/abykuruvilla/" target="_blank" class="contact-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="7" width="9" height="10" rx="1.5"/>
+              <path d="M2 12h9"/>
+              <path d="M13 8h6"/>
+              <path d="M13 12h7a3 3 0 010 5h-7V7a3.5 3.5 0 017 0"/>
+            </svg>
+            behance.net/abykuruvilla
+          </a>
+          <div style="width:100%;height:1px;background:rgba(0, 0, 0, 0.15);margin:0.8rem 0;"></div>
+        </div>
+        </div>
+      </div>
+      <div class="contact-right reveal reveal-delay-2">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder=""/>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder=""/>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell me about your project..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;padding:1rem;" onclick="sendToWhatsApp()">Send Message</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-logo">
+      <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+        <svg width="26" height="26" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gFt" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%"   stop-color="#7a5c18"/>
+              <stop offset="28%"  stop-color="#d4af37"/>
+              <stop offset="52%"  stop-color="#f5e07a"/>
+              <stop offset="76%"  stop-color="#d4af37"/>
+              <stop offset="100%" stop-color="#8a6820"/>
+            </linearGradient>
+          </defs>
+          <circle cx="36" cy="36" r="34" fill="none" stroke="url(#gFt)" stroke-width="1.5"/>
+          <circle cx="36" cy="36" r="25" fill="#0d0d0d"/>
+          <line x1="16"   y1="52" x2="27.5" y2="21" stroke="url(#gFt)" stroke-width="2.8" stroke-linecap="round"/>
+          <line x1="27.5" y1="21" x2="39"   y2="52" stroke="url(#gFt)" stroke-width="2.8" stroke-linecap="round"/>
+          <line x1="21"   y1="40" x2="34"   y2="40" stroke="url(#gFt)" stroke-width="2"   stroke-linecap="round"/>
+          <line x1="42"   y1="21" x2="42"   y2="52" stroke="url(#gFt)" stroke-width="2.8" stroke-linecap="round"/>
+          <line x1="42"   y1="36" x2="55"   y2="21" stroke="url(#gFt)" stroke-width="2.4" stroke-linecap="round"/>
+          <line x1="42"   y1="36" x2="55"   y2="52" stroke="url(#gFt)" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="27.5" cy="21" r="2" fill="#f5e07a" opacity="0.9"/>
+          <circle cx="42"   cy="21" r="2" fill="#f5e07a" opacity="0.9"/>
+        </svg>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;
+                     letter-spacing:.28em;text-transform:uppercase;color:#d4af37;">Aby Kuruvilla</span>
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Aby Kuruvilla. All Rights Reserved.</p>
+  </footer>
+
+  <script src="logo-engine.js"></script>
+  <script src="script.js"></script>
+  <script src="logo-engine.js"></script>
+  <script src="script.js"></script>
+  <script src="stats-auto.js"></script> 
+  <script>
+    function sendToWhatsApp() {
+      const name    = document.querySelector('#contact input[type="text"]').value.trim();
+      const email   = document.querySelector('#contact input[type="email"]').value.trim();
+      const message = document.querySelector('#contact textarea').value.trim();
+    
+      if (!name || !email || !message) {
+        alert('Please fill in all fields before sending.');
+        return;
+      }
+    
+      const phone = '971507097593'; // your number — no + or spaces
+      const text  = `Hello Aby,%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A%0A*Message:*%0A${encodeURIComponent(message)}`;
+    
+      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    }
+    </script>
+    
+
+    <!-- ── FLOATING WHATSAPP BUTTON ── -->
+<a id="wa-float"
+href="https://wa.me/971507097593?text=Hello%20Aby%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect!"
+target="_blank"
+aria-label="Chat on WhatsApp">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+ <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+ <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.529 5.855L.057 23.215a.75.75 0 00.912.912l5.36-1.472A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.942 9.942 0 01-5.073-1.384l-.364-.216-3.764 1.033 1.033-3.764-.216-.364A9.942 9.942 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+</svg>
+</a>
+
+</body>
+</html>

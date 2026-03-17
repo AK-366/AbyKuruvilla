@@ -1,0 +1,78 @@
+/* ============================================================
+   mediaqueries.css — Aby Kuruvilla Portfolio
+   ============================================================ */
+
+   @media (max-width: 900px) {
+
+    /* ── NAV ── */
+    nav { padding:1.2rem 2rem; }
+    nav.scrolled { padding:0.9rem 2rem; }
+    .nav-links { display:none; }
+    .hamburger { display:flex; }
+  
+    /* ── HERO ── */
+    #hero {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      padding: 7rem 2rem 4rem;
+      text-align: center;
+      gap: 2.5rem;
+    }
+  
+    /* Show hero image on mobile — above the text */
+    .hero-visual {
+      display: flex;
+      order: -1;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-shape {
+      width: 220px;
+      height: 260px;
+    }
+    .shape-ring:nth-child(1) { inset: -6px; }
+    .shape-ring:nth-child(2) { inset: 22px; }
+    .shape-ring:nth-child(3) { inset: 50px; }
+    .hero-photo-wrap { inset: 30px; }
+  
+    /* Hide floating tags on mobile — overflow too wide */
+    .floating-tag { display: none; }
+  
+    .hero-bio { margin: 1.5rem auto; max-width: 38ch; }
+    .hero-btns { justify-content: center; flex-wrap: wrap; }
+    .hero-socials { justify-content: center; }
+  
+    /* ── SECTIONS ── */
+    section { padding:5rem 2rem; }
+  
+    /* ── ABOUT ── */
+    .about-grid { grid-template-columns:1fr; gap:3rem; }
+    .about-portrait { max-width: 300px; margin: 0 auto 1.5rem; }
+    .about-portrait-badge { right: -8px; font-size: 0.52rem; padding: 0.4rem 0.7rem; }
+    .about-portrait-label { right: -8px; font-size: 0.5rem; padding: 0.35rem 0.7rem; }
+    .about-cards { grid-template-columns:1fr; }
+  
+    /* ── SKILLS ── */
+    .skills-grid { grid-template-columns:1fr; gap:2rem; }
+  
+    /* ── PROJECTS ── */
+    .projects-grid { grid-template-columns:1fr; }
+  
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid { grid-template-columns:1fr; }
+  
+    /* ── CONTACT ── */
+    .contact-inner { grid-template-columns:1fr; gap:3rem; }
+  
+    /* ── FOOTER ── */
+    footer {
+      flex-direction:column;
+      gap:1.5rem;
+      text-align:center;
+    }
+    footer .footer-links {
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+  }
