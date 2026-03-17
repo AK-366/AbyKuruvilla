@@ -19,7 +19,6 @@
       gap: 2.5rem;
     }
   
-    /* Show hero image on mobile — above the text */
     .hero-visual {
       display: flex;
       order: -1;
@@ -36,12 +35,11 @@
     .shape-ring:nth-child(3) { inset: 50px; }
     .hero-photo-wrap { inset: 30px; }
   
-    /* Hide floating tags on mobile — overflow too wide */
     .floating-tag { display: none; }
   
     .hero-bio { margin: 1.5rem auto; max-width: 38ch; }
     .hero-btns { justify-content: center; flex-wrap: wrap; }
-    .hero-socials { justify-content: center; }
+    .hero-socials { justify-content: center; flex-wrap: wrap; gap: 0.8rem; }
   
     /* ── SECTIONS ── */
     section { padding:5rem 2rem; }
@@ -52,27 +50,96 @@
     .about-portrait-badge { right: -8px; font-size: 0.52rem; padding: 0.4rem 0.7rem; }
     .about-portrait-label { right: -8px; font-size: 0.5rem; padding: 0.35rem 0.7rem; }
     .about-cards { grid-template-columns:1fr; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
   
     /* ── SKILLS ── */
     .skills-grid { grid-template-columns:1fr; gap:2rem; }
+    .skill-name { min-width: 90px; }
+    .skill-level { min-width: 60px; font-size: 0.58rem; }
   
     /* ── PROJECTS ── */
-    .projects-grid { grid-template-columns:1fr; }
+    .projects-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+    .project-card { aspect-ratio: 3/2; }
+  
+    /* ── PROCESS ── */
+    .process-track { flex-wrap: wrap; gap: 2rem 0; }
+    .process-step { min-width: 120px; max-width: 50%; flex: 0 0 50%; padding: 0 1rem; }
+    .process-track::before { display: none; }
+    .process-track::after { display: none; }
+    .step-dot { margin-bottom: 0.8rem; }
+  
+    /* ── ABOUT BANNER ── */
+    .about-banner-inner { background-attachment: scroll; }
   
     /* ── TESTIMONIALS ── */
     .testimonials-grid { grid-template-columns:1fr; }
+    .testimonial-card { padding: 1.8rem; }
   
     /* ── CONTACT ── */
     .contact-inner { grid-template-columns:1fr; gap:3rem; }
+    .contact-cta { font-size: clamp(1.6rem, 5vw, 2.5rem); }
   
     /* ── FOOTER ── */
     footer {
       flex-direction:column;
       gap:1.5rem;
       text-align:center;
+      padding: 2rem 1.5rem;
     }
     footer .footer-links {
       flex-wrap:wrap;
       justify-content:center;
+      gap: 1.2rem;
     }
+  
+    /* ── WHATSAPP FLOAT ── */
+    #wa-float { bottom: 1.2rem; right: 1.2rem; width: 48px; height: 48px; }
+    #wa-float svg { width: 24px; height: 24px; }
+    #wa-float::after { display: none; }
+  }
+  
+  /* ── EXTRA SMALL — phones under 480px ── */
+  @media (max-width: 480px) {
+  
+    /* NAV */
+    nav { padding: 1rem 1.2rem; }
+  
+    /* HERO */
+    #hero { padding: 6rem 1.2rem 3rem; }
+    .hero-shape { width: 180px; height: 220px; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .hero-btns .btn-primary,
+    .hero-btns .btn-outline { width: 100%; text-align: center; }
+  
+    /* SECTIONS */
+    section { padding: 4rem 1.2rem; }
+  
+    /* ABOUT */
+    .about-portrait { max-width: 240px; }
+    .stat-num { font-size: 2rem; }
+    .stat-box { padding: 1rem; }
+  
+    /* SKILLS */
+    .skill-item { gap: 0.8rem; }
+    .skill-name { min-width: 75px; font-size: 0.82rem; }
+    .skill-level { display: none; }
+  
+    /* PROJECTS */
+    .project-card { aspect-ratio: 4/3; }
+    .project-title { font-size: 1.3rem; }
+  
+    /* PROCESS */
+    .process-step { flex: 0 0 100%; max-width: 100%; }
+  
+    /* CONTACT */
+    .contact-inner { gap: 2rem; }
+    .form-group input,
+    .form-group textarea { font-size: 0.85rem; padding: 0.75rem 0.9rem; }
+  
+    /* FOOTER */
+    footer { padding: 1.8rem 1.2rem; }
+    footer .footer-links { gap: 0.8rem; }
+  
+    /* SECTION TITLE */
+    .section-title { font-size: clamp(2rem, 8vw, 3rem); margin-bottom: 2rem; }
   }
